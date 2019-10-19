@@ -33,6 +33,7 @@ class RegisterLendeeForm(FlaskForm):
     goal = DecimalField('goal', validators=[DataRequired()])
     country_from = CountryOriginSelectField('country_from', validators=[DataRequired()])
     country_to = CountryDestinationSelectField('country_to', validators=[DataRequired()])
+    submit = SubmitField('Register as a Lendee')
 
 class InvestForm(FlaskForm):
     invest = SubmitField('Invest!')

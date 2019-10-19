@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Form-v10 by Colorlib</title>
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Font-->
+	<link rel="stylesheet" type="text/css" href="/static/css/montserrat-font.css">
+	<link rel="stylesheet" type="text/css" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+	<!-- Main Style Css -->
+    <link rel="stylesheet" href="/static/css/register_lendee2.css"/>
+</head>
+<body class="form-v10">
+	<div class="page-content">
+		<div class="form-v10-content">
+			<form class="form-detail" action="#" method="post" id="myform">
+				{{form.hidden_tag()}}
+				<div class="form-left">
+					<h2>General Information</h2>
+					<div class="form-group">
+						<div class="form-row form-row-1">
+							{{ form.name(id = 'name', placeholder = 'Name')}}
+						</div>
+						<div class="form-row form-row-2">
+							{{ form.age(id = 'age', placeholder = 'Age')}}
+						</div>
+					</div>
+					<div class="form-group">
+							<div class="form-row form-row-1">
+								{{ form.sex(id = 'sex')}}
+							</div>
+
+							<div class="form-row form-row-2">
+								{{ form.income(id = 'income', placeholder = 'Income')}}
+							</div>
+					</div>
+					<div class="form-group">
+							<div class="form-row form-row-1">
+								{{ form.goal(id = 'goal', placeholder = 'Goal')}}
+							</div>
+
+							<div class="form-row form-row-2">
+								{{ form.rent(id = 'rent', placeholder = 'Rent')}}
+							</div>
+					</div>
+					<div class="form-group">
+						<div class="form-row form-row-1">
+							{{ form.country_from(id = 'country_from')}}
+							</div>
+
+							<div class="form-row form-row-2">
+								{{ form.country_to(id = 'country_to')}}
+							</div>
+
+					</div>
+					<div class="form-group">
+						<div class="form-row form-row-1">
+							{{ form.credit_amount(id = 'credit_amount', placeholder = 'Credit Amount Owed')}}
+							</div>
+
+							<div class="form-row form-row-2">
+								{{ form.duration(id = 'duration', placeholder = 'Debt Duration')}}
+							</div>
+					</div>
+					<div class="form-row form-row-1">
+							{{ form.submit(id = 'submit')}}
+						</div>
+				</div>
+				<div class="form-right">
+					<h2>Miscellaneous Details</h2>
+					<div class="form-group">
+						<div class="form-row form-row-1">
+							<p style = "color: white">Have a job?</p>
+							{{ form.job(id = 'job', style = "-webkit-appearance: checkbox")}}
+							</div>
+
+							<div class="form-row form-row-2">
+								  <p class="form-labels" style="color:white">Own a house?</p>
+              						{{ form.housing_own(id = 'housing_own', style = "-webkit-appearance: checkbox")}}
+							</div>
+					</div>
+					<div class="form-group">
+						<div class="form-row form-row-1">
+							<p style = "color: white">Rent a house?</p>
+							{{ form.housing_rent(id = 'housing_rent', style = "-webkit-appearance: checkbox")}}
+							</div>
+
+							<div class="form-row form-row-2">
+								  <p class="form-labels" style="color:white">Have moderate savings?</p>
+              						{{ form.savings_moderate(id = 'savings_moderate', style = "-webkit-appearance: checkbox")}}
+							</div>
+					</div>
+					<div class="form-group">
+						<div class="form-row form-row-1">
+							<p style = "color: white">Kinda rich?</p>
+							{{ form.savings_quite_rich(id = 'savings_quite_rich', style = "-webkit-appearance: checkbox")}}
+							</div>
+
+							<div class="form-row form-row-2">
+								  <p class="form-labels" style="color:white">Rolling in money?</p>
+              						{{ form.savings_rich(id = 'savings_rich', style = "-webkit-appearance: checkbox")}}
+							</div>
+					</div>
+					<div class="form-group">
+						<div class="form-row form-row-1">
+							<p style = "color: white">Moderate savings in checking?</p>
+							{{ form.check_moderate(id = 'check_moderate', style = "-webkit-appearance: checkbox")}}
+							</div>
+
+							<div class="form-row form-row-2">
+								  <p class="form-labels" style="color:white">Lots of money in checking?</p>
+              						{{ form.check_rich(id = 'check_rich', style = "-webkit-appearance: checkbox")}}
+							</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
