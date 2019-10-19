@@ -2,7 +2,7 @@
 # Imports
 #----------------------------------------------------------------------------#
 
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, redirect, url_for
 from flask_cors import CORS
 # from flask.ext.sqlalchemy import SQLAlchemy
 import logging
@@ -55,9 +55,9 @@ store = {
         }
 }
 
-with open("store.json", "w") as f:
+with open("store.json") as f:
     import json
-    json.dump(store, f)
+    store = json.load(f)
 #db = SQLAlchemy(app)
 
 # Automatically tear down SQLAlchemy.
@@ -86,11 +86,26 @@ def login_required(test):
 
 @app.route('/')
 def home():
-    return render_template('pages/placeholder.home.html')
+    return redirect(url_for('/register_lendee'))
 
 @app.route('/credit-score')
 def credit_score():
     return jsonify({'score': 600})
+
+@app.route('/lender/<name>')
+def get_lender(name):
+    response = jsonify({'data': store['lenders'][name]})
+    return response
+
+@app.route('/lendee/<name>')
+def get_lendee(name):
+    response = jsonify({'data': store['lendees'][name]})
+    return response
+
+@app.route('/request-investment/<name>')
+def request_investment(name):
+
+    pass
 
 @app.route('/about')
 def about():
@@ -103,11 +118,22 @@ def login():
     return render_template('forms/login.html', form=form)
 
 
-@app.route('/register')
-def register():
-    form = RegisterForm(request.form)
-    return render_template('forms/register.html', form=form)
-
+@app.route('/register_lendee', methods = ["GET", "POST"])
+def register_lendee():
+    form = RegisterLendeeForm(request.form)
+    if form.validate_on_submit():
+        # TODO: calculate credit score
+        credit_score = 0
+        store['lendees'][form.name.data] = {
+            "goal": int(form.goal.data),
+            "done": 0,
+            "credit_score": credit_score,
+            "lenders": []
+        }
+        with open("store.json", "w") as f:
+            import json
+            json.dump(store, f, indent=4)
+    return render_template('forms/register_lendee.html', form=form)
 
 @app.route('/forgot')
 def forgot():

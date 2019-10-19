@@ -28,7 +28,7 @@ def login():
 @blueprint.route('/register')
 def register():
     form = RegisterForm(request.form)
-    return render_template('forms/register.html', form=form)
+    return render_template('forms/register_lendee.html', form=form)
 
 
 @blueprint.route('/forgot')
