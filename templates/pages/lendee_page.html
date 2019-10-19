@@ -1,7 +1,7 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <style>
  .table {
-	border: solid 1px #ddeeee;
-	border-collapse: collapse;
+	border: solid 1px black;
 	border-spacing: 0;
 	font: normal 13px Arial, sans-serif;
 	width: 70%;
@@ -11,10 +11,9 @@
 }
 
 thead th {
-	background-color: #ddefef;
-	border: solid 1px #868ca0bf;
-	box-shadow: 1px 1px 1px #000;
-	color: #336b6b;
+	background-color: white;
+	border: solid 1px black;
+	color: #2271dd;
 	padding: 10px;
 	text-align: left;
 	cursor: pointer;
@@ -23,15 +22,19 @@ thead th {
 }
 
 tbody td {
-	border: solid 1px #868ca0bf;
-	color: #333;
+	border: solid 1px black;
+	color: black;
 	padding: 5px;
-	text-shadow: 1px 1px 1px #fff;
 }
 
 .selected {
 	background-color: #76daff7d;
 }
+
+ h1{
+     color: white;
+font-family: 'Montserrat', sans-serif;
+ }
 
 .md {
 	width: 30%;
@@ -40,13 +43,6 @@ tbody td {
 	width: 10%;
 }
 
- .container{
-     width: 30%;
-     min-height: 150px;
-     background: black;
-     padding: 50px;
- }
-
 .progress-bar {
     margin-bottom: 2px;
 }
@@ -54,11 +50,10 @@ tbody td {
 .outer{
     height: 100px;
     width: 400px;
-    border: 2px solid #868ca0;
+    border: 1px solid black;
     margin-top:20px;
     margin-left: 10px;
     margin-bottom: 20px;
-    position: absolute;
 }
 .inner{
     height: 100px;
@@ -67,22 +62,31 @@ tbody td {
     margin-top: 0px;
     margin-right: 10px;
     background: rgb(82, 158, 14);
-    border: 2px solid #868ca0;
     position: absolute;
 }
 
 .status{float:left;}
 .sofar{color: white;}
 
-.total{
-    color: white;
-    margin-left: 10px;
-    float:left;
+ /* .total{
+    color: black;
+    margin-left: 420px;
+    float:right;
+    margin-bottom: 20px;
+    position:absolute;
     }
+  */
 
  body {
-     padding: 50px 50px 50px 50px;
+     padding: 50px 50px 10px 50px;
+     background: rgb(139,198,236);
  }
+ .container {
+     background: #4835d4;
+     width: 100%;
+     height:100%;
+ }
+
 
 
 </style>
@@ -91,7 +95,7 @@ tbody td {
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-    <div id="lendee_page">
+    <div id="lendee_page" class="container jumbotron">
         <h1>Hello, {{ name.title() }}</h1>
 
         <center>
@@ -119,22 +123,22 @@ tbody td {
             </table>
         </center>
     </div>
-<script>
+</body>
 
+<script>
  Vue.component("progressbar", {
      props: ["total", "sofar"],
      template:`
          <div>
-             <div class="container">
              <div >
+                <h1 class="total_pre"> You've raised</h1>
                  <div class="outer">
                      <div class="inner">
                          <h1 class="sofar"> $490</h1>
                      </div>
                  </div>
-                    <h1 class="total"> $1000</h1>
+                    <h1 class="total"> out of $1000</h1>
              </div>
-                 </div>
          </div>
      `,
      created(){
