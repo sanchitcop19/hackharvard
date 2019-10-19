@@ -38,7 +38,11 @@
             "goal": 1000,
             "done": 0,
             "credit_score": 0,
-            "lenders": [],
+            "lenders": [
+                "Machoke",
+                "Machomp",
+                "Machamp"
+            ],
             "origin": "KZ",
             "destination": "FR"
         },
@@ -57,6 +61,14 @@
             "lenders": [],
             "origin": "AW",
             "destination": "AI"
+        },
+        "Bob": {
+            "goal": 2134,
+            "done": 0,
+            "credit_score": 750,
+            "lenders": [],
+            "origin": "AF",
+            "destination": "AQ"
         }
     }
 }
