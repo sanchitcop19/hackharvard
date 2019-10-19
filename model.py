@@ -103,12 +103,14 @@ def compute_credit_confidence(model, params):
     df = pd.DataFrame(params_dict)
 
     conf = model.predict_proba(df)
-    res = 600 + 15 * conf[0][1]
+    res = 600 + 150 * conf[0][1]
     if conf[0][0] > conf[0][1]:
-        res = 600 - 10*conf[0][0]
+        res = 600 - 100*conf[0][0]
 
     return conf[0][1], res
 
 if __name__ == "__main__":
     model = train_model()
     conf, res = compute_credit_confidence(model, [22,1,4,3,1,0,1,0,1,0,1,0])
+    print(conf)
+    print(res)
