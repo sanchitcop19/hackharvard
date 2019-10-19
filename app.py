@@ -2,7 +2,7 @@
 # Imports
 #----------------------------------------------------------------------------#
 
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, redirect, url_for
 from flask_cors import CORS
 # from flask.ext.sqlalchemy import SQLAlchemy
 import logging
@@ -86,7 +86,7 @@ def login_required(test):
 
 @app.route('/')
 def home():
-    return render_template('pages/placeholder.home.html')
+    return redirect(url_for('/register_lendee'))
 
 @app.route('/credit-score')
 def credit_score():
@@ -102,8 +102,9 @@ def get_lendee(name):
     response = jsonify({'data': store['lendees'][name]})
     return response
 
-@app.route('/request-investment/')
-def request_investment():
+@app.route('/request-investment/<name>')
+def request_investment(name):
+
     pass
 
 @app.route('/about')
@@ -123,18 +124,16 @@ def register_lendee():
     if form.validate_on_submit():
         # TODO: calculate credit score
         credit_score = 0
-        if form.name.data not in store['lendees']:
-            store['lendees'][form.name.data] = {
-                "goal": form.goal.data,
-                "done": 0,
-                "credit_score": credit_score,
-                "lenders": []
-            }
+        store['lendees'][form.name.data] = {
+            "goal": int(form.goal.data),
+            "done": 0,
+            "credit_score": credit_score,
+            "lenders": []
+        }
         with open("store.json", "w") as f:
             import json
             json.dump(store, f, indent=4)
     return render_template('forms/register_lendee.html', form=form)
-
 
 @app.route('/forgot')
 def forgot():

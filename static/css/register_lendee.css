@@ -34,6 +34,7 @@ input:valid ~ label {
 
 input {
   font-size: 20px;
+  color: white;
   width: 100%;
   border: none;
   margin-top: 10px;

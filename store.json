@@ -15,18 +15,12 @@
     },
     "lendees": {
         "yuval": {
-            "goal": 0,
+            "goal": 1000,
             "done": 0,
             "credit_score": 0,
             "lenders": []
         },
         "nien": {
-            "goal": 0,
-            "done": 0,
-            "credit_score": 0,
-            "lenders": []
-        },
-        "sanchit": {
             "goal": 0,
             "done": 0,
             "credit_score": 0,
