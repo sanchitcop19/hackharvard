@@ -1,0 +1,1 @@
+{"lenders": {"sanchit": {"total": 0, "invested": 0, "left": 0, "risk_tolerance": 0}, "vignesh": {"total": 0, "invested": 0, "left": 0, "risk_tolerance": 0}}, "lendees": {"yuval": {"goal": 0, "done": 0, "credit_score": 0, "lenders": []}, "nien": {"goal": 0, "done": 0, "credit_score": 0, "lenders": []}}}

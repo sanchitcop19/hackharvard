@@ -2,7 +2,8 @@
 # Imports
 #----------------------------------------------------------------------------#
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
+from flask_cors import CORS
 # from flask.ext.sqlalchemy import SQLAlchemy
 import logging
 from logging import Formatter, FileHandler
@@ -14,7 +15,49 @@ import os
 #----------------------------------------------------------------------------#
 
 app = Flask(__name__)
+CORS(app)
 app.config.from_object('config')
+
+store = {
+    "lenders":
+        {
+            "sanchit": {
+                "total": 0,
+                "invested": 0,
+                "left": 0,
+                "risk_tolerance": 0
+            },
+            "vignesh": {
+                "total": 0,
+                "invested": 0,
+                "left": 0,
+                "risk_tolerance": 0
+            }
+        },
+    "lendees":
+        {
+            "yuval": {
+                "goal": 0,
+                "done": 0,
+                "credit_score": 0,
+                "lenders": [
+
+                ]
+            },
+            "nien": {
+                "goal": 0,
+                "done": 0,
+                "credit_score": 0,
+                "lenders": [
+
+                ]
+            }
+        }
+}
+
+with open("store.json", "w") as f:
+    import json
+    json.dump(store, f)
 #db = SQLAlchemy(app)
 
 # Automatically tear down SQLAlchemy.
@@ -45,6 +88,9 @@ def login_required(test):
 def home():
     return render_template('pages/placeholder.home.html')
 
+@app.route('/credit-score')
+def credit_score():
+    return jsonify({'score': 600})
 
 @app.route('/about')
 def about():
