@@ -36,6 +36,10 @@ tbody td {
 font-family: 'Montserrat', sans-serif;
  }
 
+ h1.g {
+     color: gray;
+ }
+
 .md {
 	width: 30%;
 }
@@ -66,7 +70,7 @@ font-family: 'Montserrat', sans-serif;
 }
 
 .status{float:left;}
-.sofar{color: white;}
+.sofar{color: white; margin-top: 20px;}
 
  /* .total{
     color: black;
@@ -81,13 +85,31 @@ font-family: 'Montserrat', sans-serif;
      padding: 50px 50px 10px 50px;
      background: rgb(139,198,236);
  }
- .container {
+ .containerp {
      background: #4835d4;
-     width: 100%;
-     height:100%;
  }
 
+ .containerw {
+     background: white;
+ }
 
+ .third {
+     width: 400px;
+     margin-left: 2px;
+     margin-right: 2px;
+     float: left;
+ }
+
+ .half {
+     width: 900px;
+     margin-left: 2px;
+     margin-right: 2px;
+     float: right;
+ }
+
+ p {
+     color: white;
+ }
 
 </style>
 
@@ -95,14 +117,19 @@ font-family: 'Montserrat', sans-serif;
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-    <div id="lendee_page" class="container jumbotron">
-        <h1>Hello, {{ name.title() }}</h1>
-
-        <center>
-            <div id="progress-bar">
-                <progressbar total="$1000" sofar="$490"></progressbar>
-                <!-- <h4>24% of money raised</h4> -->
+    <div id="lendee_page" >
+        <div >
+            <div class="containerp jumbotron third">
+                <h1> {{ name.title() }}. </h1>
+                <p>Your estimated credit score is <b>615</b>.</p>
             </div>
+            <div class="containerw jumbotron half">
+                <center>
+                    <progressbar total="$1000" sofar="$490"></progressbar>
+                </center>
+            </div>
+        </div>
+        <center>
             <table class="table" id='countryTable'>
                 <thead>
                 <tr>
@@ -131,13 +158,13 @@ font-family: 'Montserrat', sans-serif;
      template:`
          <div>
              <div >
-                <h1 class="total_pre"> You've raised</h1>
+                <h1 class="total_pre g"> You've raised</h1>
                  <div class="outer">
                      <div class="inner">
                          <h1 class="sofar"> $490</h1>
                      </div>
                  </div>
-                    <h1 class="total"> out of $1000</h1>
+                    <h1 class="total g"> out of $1000</h1>
              </div>
          </div>
      `,
