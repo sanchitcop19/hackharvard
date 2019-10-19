@@ -1,21 +1,21 @@
 {
     "lenders": {
         "sanchit": {
-            "total": 0,
+            "total": 100,
             "invested": 0,
-            "left": 0,
-            "risk_tolerance": 0
+            "amount": 2,
+            "risk_tolerance": 70
         },
         "vignesh": {
-            "total": 0,
+            "total": 100,
             "invested": 0,
-            "left": 0,
-            "risk_tolerance": 0
+            "amount": 3,
+            "risk_tolerance": 45
         }
     },
     "lendees": {
         "yuval": {
-            "goal": 0,
+            "goal": 1000,
             "done": 0,
             "credit_score": 0,
             "lenders": []
@@ -25,6 +25,22 @@
             "done": 0,
             "credit_score": 0,
             "lenders": []
+        },
+        "Sanchit": {
+            "goal": 1000,
+            "done": 0,
+            "credit_score": 0,
+            "lenders": [],
+            "origin": "UY",
+            "destination": "AF"
+        },
+        "bob": {
+            "goal": 1000,
+            "done": 0,
+            "credit_score": 0,
+            "lenders": [],
+            "origin": "KZ",
+            "destination": "FR"
         }
     }
 }

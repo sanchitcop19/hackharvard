@@ -1,43 +1,5 @@
 {% extends 'layouts/form.html' %}
-{% block head %}
-{% block title %}Register
-{% endblock %}
-{% endblock %}
 {% block content %}
-  <form method = "post" autocomplete="off">
-      {{ form.hidden_tag() }}
-    <fieldset>
-        {{ form.name(id = 'name')}}
-      <label for="name">Name</label>
-      <div class="after"></div>
-    </fieldset>
-    <fieldset>
-      {{ form.income(id = 'income')}}
-      <label for="last">Income</label>
-      <div class="after"></div>
-    </fieldset>
-    <fieldset>
-      {{ form.rent(id = 'rent')}}
-      <label for="rent">Rent</label>
-      <div class="after"></div>
-    </fieldset>
-      <fieldset>
-      {{ form.goal(id = 'goal')}}
-      <label for="goal">Goal</label>
-      <div class="after"></div>
-    </fieldset>
-      <fieldset>
-      {{ form.country_from(id = 'country_from')}}
-      <div class="after"></div>
-    </fieldset>
-        <fieldset>
-      {{ form.country_to(id = 'country_to')}}
-      <div class="after"></div>
-    </fieldset>
-    <fieldset>
-      <button>Submit</button>
-    </fieldset>
-  </form>
 <style>
 body{
     background: black;
@@ -62,7 +24,6 @@ body{
   font-size: 95px;
 }
 </style>>
-{% if submitted %}
 <script>
     	//based on https://bl.ocks.org/mbostock/1096355
 	//apple design:https://images.apple.com/watch/features/images/fitness_large.jpg
@@ -261,5 +222,4 @@ body{
 
 
 </script>
-{% endif %}
 {% endblock %}

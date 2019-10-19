@@ -9,6 +9,9 @@ import logging
 from logging import Formatter, FileHandler
 from forms import *
 import os
+from model import *
+
+DONATION_AMOUNT = 2
 
 #----------------------------------------------------------------------------#
 # App Config.
@@ -86,7 +89,7 @@ def login_required(test):
 
 @app.route('/')
 def home():
-    return redirect(url_for('/register_lendee'))
+    return redirect(url_for('register_lendee'))
 
 @app.route('/credit-score')
 def credit_score():
@@ -101,11 +104,6 @@ def get_lender(name):
 def get_lendee(name):
     response = jsonify({'data': store['lendees'][name]})
     return response
-
-@app.route('/request-investment/<name>')
-def request_investment(name):
-
-    pass
 
 @app.route('/about')
 def about():
@@ -123,17 +121,38 @@ def register_lendee():
     form = RegisterLendeeForm(request.form)
     if form.validate_on_submit():
         # TODO: calculate credit score
+
         credit_score = 0
         store['lendees'][form.name.data] = {
             "goal": int(form.goal.data),
             "done": 0,
             "credit_score": credit_score,
-            "lenders": []
+            "lenders": [],
+            "origin": form.country_from.data,
+            "destination": form.country_to.data
         }
         with open("store.json", "w") as f:
             import json
             json.dump(store, f, indent=4)
-    return render_template('forms/register_lendee.html', form=form)
+        return render_template('forms/score.html')
+    return render_template('forms/register_lendee.html', form=form, submitted = False)
+
+@app.route('/request-investment/<name>')
+def request_investment(name):
+    lendee = store['lendees'][name]
+    for lender in store['lenders']:
+
+        if store['lenders'][lender]['total'] - store['lenders'][lender]['invested'] > 0:
+            investment = store['lenders'][lender]['amount']
+            store['lenders'][lender]['invested'] += investment
+            store['lendees'][name]['done'] += investment
+            store['lendees'][name]['lenders'].append(lender)
+            if store['lendees'][name]['done'] == store['lendees'][name]['goal']:
+                break
+    response = jsonify({'data': store['lendees'][name]})
+    return response
+
+
 
 @app.route('/forgot')
 def forgot():
