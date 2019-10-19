@@ -57,6 +57,14 @@
             "lenders": [],
             "origin": "AO",
             "destination": "AX"
+        },
+        "sdf": {
+            "goal": 1000,
+            "done": 0,
+            "credit_score": 0,
+            "lenders": [],
+            "origin": "AO",
+            "destination": "AD"
         }
     }
 }
