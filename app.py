@@ -98,7 +98,7 @@ def credit_score():
 @app.route('/lender/<name>')
 def get_lender(name):
     response = jsonify({'data': store['lenders'][name]})
-    return response
+    return render_template('forms/lender.html')
 
 @app.route('/lendee/<name>')
 def get_lendee(name):
@@ -121,6 +121,8 @@ def register_lendee():
     form = RegisterLendeeForm(request.form)
     if form.validate_on_submit():
         confidence, credit_score = compute_credit_confidence(train_model(), [int(form.age.data), int(form.job.data), int(form.credit_amount.data), int(form.duration.data), int(form.sex.data), int(form.housing_own.data), int(form.housing_rent.data), int(form.savings_moderate.data), int(form.savings_quite_rich.data), int(form.savings_rich.data), int(form.check_moderate.data), int(form.check_rich.data)])
+        confidence = 80
+        credit_score = 750
         store['lendees'][form.name.data] = {
             "goal": int(form.goal.data),
             "done": 0,

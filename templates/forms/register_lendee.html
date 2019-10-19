@@ -47,9 +47,17 @@
               {{ form.country_to(id = 'country_to')}}
               <div class="after"></div>
             </fieldset>
-            <fieldset>
-              <button>Submit</button>
+              <fieldset>
+              {{ form.credit_amount(id = 'credit_amount')}}
+                    <label for="credit_amount">Credit Amount Owed</label>
+              <div class="after"></div>
             </fieldset>
+                  <fieldset>
+              {{ form.duration(id = 'duration')}}
+                      <label for="duration">How long have you owed debt?</label>
+              <div class="after"></div>
+            </fieldset>
+
           </div>
           <div class="col-sm-6" id = "col2">
             <fieldset>
@@ -84,15 +92,8 @@
                   <p class="form-labels">Check if you have a lot of money in a checking account: </p>
               {{ form.check_rich(id = 'check_rich')}}
             </fieldset>
-                <fieldset>
-              {{ form.credit_amount(id = 'credit_amount')}}
-                    <label for="credit_amount">Credit Amount Owed</label>
-              <div class="after"></div>
-            </fieldset>
-                  <fieldset>
-              {{ form.duration(id = 'duration')}}
-                      <label for="duration">How long have you owed debt?</label>
-              <div class="after"></div>
+            <fieldset>
+              <button>Submit</button>
             </fieldset>
 
           </div>

@@ -1,8 +1,8 @@
 body {
   font-size: 20px;
   font-family: system-ui, Helvetica, Arial, sans-serif;
+  overflow: hidden;
 }
-
 form {
   width: 300px;
   margin: 20px auto;
@@ -53,7 +53,9 @@ input {
   border: none;
   margin-top: 10px;
   background: black;
-  margin: 0.5em;
+  margin: 0.15em;
+  padding: 0.6em;
+  padding-down: 0.1em;
 }
 
 input:focus {

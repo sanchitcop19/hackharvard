@@ -49,6 +49,14 @@
             "lenders": [],
             "origin": "AF",
             "destination": "AF"
+        },
+        "sanchit": {
+            "goal": 21,
+            "done": 0,
+            "credit_score": 750,
+            "lenders": [],
+            "origin": "AW",
+            "destination": "AI"
         }
     }
 }
