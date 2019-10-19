@@ -25,12 +25,6 @@
             "done": 0,
             "credit_score": 0,
             "lenders": []
-        },
-        "sanchit": {
-            "goal": 0,
-            "done": 0,
-            "credit_score": 0,
-            "lenders": []
         }
     }
 }

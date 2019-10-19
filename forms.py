@@ -1,8 +1,14 @@
-from flask_wtf import Form
-from wtforms import TextField, PasswordField
+from flask_wtf import Form, FlaskForm
+from wtforms import StringField, PasswordField, DecimalField, TextField
 from wtforms.validators import DataRequired, EqualTo, Length
 
 # Set your classes here.
+
+class RegisterLendeeForm(FlaskForm):
+    name = StringField('name', validators=[DataRequired()])
+    income = DecimalField('income', validators=[DataRequired()])
+    rent = DecimalField('rent', validators=[DataRequired()])
+    goal = DecimalField('goal', validators=[DataRequired()])
 
 
 class RegisterForm(Form):

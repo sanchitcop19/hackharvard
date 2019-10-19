@@ -55,9 +55,9 @@ store = {
         }
 }
 
-with open("store.json", "w") as f:
+with open("store.json") as f:
     import json
-    json.dump(store, f)
+    store = json.load(f)
 #db = SQLAlchemy(app)
 
 # Automatically tear down SQLAlchemy.
@@ -92,6 +92,20 @@ def home():
 def credit_score():
     return jsonify({'score': 600})
 
+@app.route('/lender/<name>')
+def get_lender(name):
+    response = jsonify({'data': store['lenders'][name]})
+    return response
+
+@app.route('/lendee/<name>')
+def get_lendee(name):
+    response = jsonify({'data': store['lendees'][name]})
+    return response
+
+@app.route('/request-investment/')
+def request_investment():
+    pass
+
 @app.route('/about')
 def about():
     return render_template('pages/placeholder.about.html')
@@ -103,10 +117,23 @@ def login():
     return render_template('forms/login.html', form=form)
 
 
-@app.route('/register')
-def register():
-    form = RegisterForm(request.form)
-    return render_template('forms/register.html', form=form)
+@app.route('/register_lendee', methods = ["GET", "POST"])
+def register_lendee():
+    form = RegisterLendeeForm(request.form)
+    if form.validate_on_submit():
+        # TODO: calculate credit score
+        credit_score = 0
+        if form.name.data not in store['lendees']:
+            store['lendees'][form.name.data] = {
+                "goal": form.goal.data,
+                "done": 0,
+                "credit_score": credit_score,
+                "lenders": []
+            }
+        with open("store.json", "w") as f:
+            import json
+            json.dump(store, f, indent=4)
+    return render_template('forms/register_lendee.html', form=form)
 
 
 @app.route('/forgot')
