@@ -1,0 +1,152 @@
+<style>
+ .table {
+	border: solid 1px #ddeeee;
+	border-collapse: collapse;
+	border-spacing: 0;
+	font: normal 13px Arial, sans-serif;
+	width: 70%;
+	display: block;
+	height: auto;
+    overflow-y: scroll;
+}
+
+thead th {
+	background-color: #ddefef;
+	border: solid 1px #868ca0bf;
+	box-shadow: 1px 1px 1px #000;
+	color: #336b6b;
+	padding: 10px;
+	text-align: left;
+	cursor: pointer;
+	position: sticky;
+	top: 0;
+}
+
+tbody td {
+	border: solid 1px #868ca0bf;
+	color: #333;
+	padding: 5px;
+	text-shadow: 1px 1px 1px #fff;
+}
+
+.selected {
+	background-color: #76daff7d;
+}
+
+.md {
+	width: 30%;
+}
+.sm {
+	width: 10%;
+}
+
+ .container{
+     width: 30%;
+     min-height: 150px;
+     background: black;
+     padding: 50px;
+ }
+
+.progress-bar {
+    margin-bottom: 2px;
+}
+
+.outer{
+    height: 100px;
+    width: 400px;
+    border: 2px solid #868ca0;
+    margin-top:20px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    position: absolute;
+}
+.inner{
+    height: 100px;
+    width: 190px;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-right: 10px;
+    background: rgb(82, 158, 14);
+    border: 2px solid #868ca0;
+    position: absolute;
+}
+
+.status{float:left;}
+.sofar{color: white;}
+
+.total{
+    color: white;
+    margin-left: 10px;
+    float:left;
+    }
+
+ body {
+     padding: 50px 50px 50px 50px;
+ }
+
+
+</style>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="lendee_page">
+        <h1>Hello, {{ name.title() }}</h1>
+
+        <center>
+            <div id="progress-bar">
+                <progressbar total="$1000" sofar="$490"></progressbar>
+                <!-- <h4>24% of money raised</h4> -->
+            </div>
+            <table class="table" id='countryTable'>
+                <thead>
+                <tr>
+                    <th class="sm">Lender</th>
+                    <th class="sm">Amount</th>
+                    <th class="sm">Interest Rate</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for lender in lenders %}
+                    <tr>
+                        <td>{{ lender.title() }}</td>
+                        <td>$2</td>
+                        <td>4%</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </center>
+    </div>
+<script>
+
+ Vue.component("progressbar", {
+     props: ["total", "sofar"],
+     template:`
+         <div>
+             <div class="container">
+             <div >
+                 <div class="outer">
+                     <div class="inner">
+                         <h1 class="sofar"> $490</h1>
+                     </div>
+                 </div>
+                    <h1 class="total"> $1000</h1>
+             </div>
+                 </div>
+         </div>
+     `,
+     created(){
+         console.log(this.total);
+     }
+ });
+ 
+ new Vue({
+        el: '#lendee_page',
+        /* components:[progressbar] */
+    });
+
+</script>
+
+</body>

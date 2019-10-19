@@ -76,7 +76,7 @@ def compute_credit_confidence(model, params):
     # ['Age', Age of lendee
     #  'Job', 1 if they have job 0 otherwise
     #  'Credit amount', Amount of credit that they owe
-    #  'Duration', Amount of time for which they have owed debt (dummy val is fine)
+    #  'Duration', number of months for which they have owed debt (dummy val between 1-10 is fine)
     #  'Sex_male', 1 if male, 0 otherwise
     #  'Housing_own', 1 if they own their own house
     #  'Housing_rent', 1 if they rent
@@ -102,11 +102,15 @@ def compute_credit_confidence(model, params):
 
     df = pd.DataFrame(params_dict)
 
-    return (model.predict_proba(df), model.predict(df))
+    conf = model.predict_proba(df)
+    res = 600 + 150 * conf[0][1]
+    if conf[0][0] > conf[0][1]:
+        res = 600 - 100*conf[0][0]
 
+    return conf[0][1], res
 
 if __name__ == "__main__":
     model = train_model()
-    conf, res = compute_credit_confidence(model, [22,1,500,313,1,0,1,0,1,0,1,0])
+    conf, res = compute_credit_confidence(model, [22,1,4,3,1,0,1,0,1,0,1,0])
     print(conf)
     print(res)
