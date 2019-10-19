@@ -95,10 +95,22 @@ def home():
 def credit_score():
     return jsonify({'score': 600})
 
-@app.route('/lender/<name>')
+def invest(lender, lendee, amount):
+    lender_data = store['lenders'][lender]
+    store['lenders'][lender]['invested'] += amount
+    store['lenders'][lender]['total'] -= amount
+    store['lendees'][lendee]['done'] += amount
+    store['lendees'][lendee]['goal'] -= amount
+
+@app.route('/lender/<name>', methods = ["GET", "POST"])
 def get_lender(name):
-    response = jsonify({'data': store['lenders'][name]})
-    return render_template('forms/lender.html')
+    lender_data = store['lenders'][name]
+    form = InvestForm()
+    amount = 2
+    if form.validate_on_submit():
+        for lendee in store['lendees']:
+            invest(name, lendee, amount)
+    return render_template('forms/lender.html', name = name, total = lender_data['total'], invested = lender_data['invested'], form = form)
 
 @app.route('/lendee/<name>')
 def get_lendee(name):

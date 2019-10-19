@@ -1,5 +1,5 @@
 from flask_wtf import Form, FlaskForm
-from wtforms import StringField, PasswordField, DecimalField, TextField, SelectField, BooleanField, RadioField
+from wtforms import StringField, PasswordField, DecimalField, TextField, SelectField, BooleanField, RadioField, SubmitField
 from wtforms.validators import DataRequired, EqualTo, Length
 import pycountry
 
@@ -34,6 +34,8 @@ class RegisterLendeeForm(FlaskForm):
     country_from = CountryOriginSelectField('country_from', validators=[DataRequired()])
     country_to = CountryDestinationSelectField('country_to', validators=[DataRequired()])
 
+class InvestForm(FlaskForm):
+    invest = SubmitField('Invest!')
 
 class RegisterForm(Form):
     name = TextField(

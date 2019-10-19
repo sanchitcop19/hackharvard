@@ -339,182 +339,102 @@ body {
   padding: 2%;
   *zoom: 1;
 }
-.grid:after {
-  content: '';
-  display: block;
-  clear: both;
-}
 @media only screen and (min-width: 481px) {
   .tablet-1 {
     width: 6.33333333%;
   }
-  .tablet-1:after {
-    content: ' (8%)';
-    color: #666;
-  }
+
   .tablet-2 {
     width: 14.66666667%;
   }
-  .tablet-2:after {
-    content: ' (17%)';
-    color: #666;
-  }
+
   .tablet-3 {
     width: 23%;
   }
-  .tablet-3:after {
-    content: ' (25%)';
-    color: #666;
-  }
+
   .tablet-4 {
     width: 31.33333333%;
   }
-  .tablet-4:after {
-    content: ' (33%)';
-    color: #666;
-  }
+
   .tablet-5 {
     width: 39.66666667%;
   }
-  .tablet-5:after {
-    content: ' (42%)';
-    color: #666;
-  }
+
   .tablet-6 {
     width: 48%;
   }
-  .tablet-6:after {
-    content: ' (50%)';
-    color: #666;
-  }
+
   .tablet-7 {
     width: 56.33333333%;
   }
-  .tablet-7:after {
-    content: ' (58%)';
-    color: #666;
-  }
+
   .tablet-8 {
     width: 64.66666667%;
   }
-  .tablet-8:after {
-    content: ' (67%)';
-    color: #666;
-  }
+
   .tablet-9 {
     width: 73%;
   }
-  .tablet-9:after {
-    content: ' (75%)';
-    color: #666;
-  }
+
   .tablet-10 {
     width: 81.33333333%;
   }
-  .tablet-10:after {
-    content: ' (83%)';
-    color: #666;
-  }
+
   .tablet-11 {
     width: 89.66666667%;
   }
-  .tablet-11:after {
-    content: ' (92%)';
-    color: #666;
-  }
+
   .tablet-12 {
     width: 98%;
   }
-  .tablet-12:after {
-    content: ' (100%)';
-    color: #666;
-  }
+
 }
 @media only screen and (min-width: 1024px) {
   .desktop-1 {
     width: 6.33333333%;
   }
-  .desktop-1:after {
-    content: ' (8%)';
-    color: #666;
-  }
+
   .desktop-2 {
     width: 14.66666667%;
   }
-  .desktop-2:after {
-    content: ' (17%)';
-    color: #666;
-  }
+
   .desktop-3 {
     width: 23%;
-  }
-  .desktop-3:after {
-    content: ' (25%)';
-    color: #666;
   }
   .desktop-4 {
     width: 31.33333333%;
   }
-  .desktop-4:after {
-    content: ' (33%)';
-    color: #666;
-  }
   .desktop-5 {
     width: 39.66666667%;
   }
-  .desktop-5:after {
-    content: ' (42%)';
-    color: #666;
-  }
+
   .desktop-6 {
     width: 48%;
-  }
-  .desktop-6:after {
-    content: ' (50%)';
-    color: #666;
   }
   .desktop-7 {
     width: 56.33333333%;
   }
-  .desktop-7:after {
-    content: ' (58%)';
-    color: #666;
-  }
+
   .desktop-8 {
     width: 64.66666667%;
   }
-  .desktop-8:after {
-    content: ' (67%)';
-    color: #666;
-  }
+
   .desktop-9 {
     width: 73%;
   }
-  .desktop-9:after {
-    content: ' (75%)';
-    color: #666;
-  }
+
   .desktop-10 {
     width: 81.33333333%;
   }
-  .desktop-10:after {
-    content: ' (83%)';
-    color: #666;
-  }
+
   .desktop-11 {
     width: 89.66666667%;
   }
-  .desktop-11:after {
-    content: ' (92%)';
-    color: #666;
-  }
+
   .desktop-12 {
     width: 98%;
   }
-  .desktop-12:after {
-    content: ' (100%)';
-    color: #666;
-  }
+
 }
 /* Boring stuff */
 @font-face {
@@ -550,9 +470,4 @@ footer {
 }
 .cf {
   *zoom: 1;
-}
-.cf:after {
-  content: '';
-  display: block;
-  clear: both;
 }

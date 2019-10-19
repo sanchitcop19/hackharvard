@@ -262,15 +262,26 @@ html, body {
   background-position:0% 0%;
   font-family: 'Source Sans Pro', sans-serif;
 }
+
+#risk-tolerance{
+	text-align: center;
+	color: white;
+}
+.money-header{
+	color: grey;
+	text-align: center;
+}
 </style>
 <div class="grid">
 	<article class="module desktop-6 tablet-4">
-<h1 class = "money">$54</h1>
+		<h3 class="money-header">Total Funds</h3>
+<h1 class = "money">{{ total }}</h1>
 	</article>
 	<article class="module desktop-6 tablet-4">
-		<h1 class = "money">$46</h1>
+		<h3 class="money-header">Funds Invested</h3>
+		<h1 class = "money">{{ invested }}</h1>
 	</article>
-	<article class="module desktop-12 tablet-4"><section id="content">
+	<article class="module desktop-12 tablet-4">
   <h1 id = "risk-tolerance">Risk Tolerance</h1>
   <div class="cube">
     <div class="a"></div>
@@ -279,8 +290,17 @@ html, body {
     <div class="d"></div>
     <div id="slider-range-min"></div>
   </div>
-  <input type="text" id="amount" />
-</section>
+  <input type="text" id="amount" style = "padding: 0"/>
+	</article>
+	<article class="module desktop-6 tablet-4">
+	<input type = "submit" id = "change-rt" value="Change Risk Tolerance"/>
+	</article>
+	<article class="module desktop-6 tablet-4">
+		<form method = "post">
+			{{ form.hidden_tag() }}
+			{{ form.invest(id = "invest")}}
+		</form>
+
 	</article>
 
 </div>
