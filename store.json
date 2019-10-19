@@ -51,12 +51,12 @@
             "destination": "AF"
         },
         "sanchit": {
-            "goal": 1200,
+            "goal": 21,
             "done": 0,
-            "credit_score": 0,
+            "credit_score": 750,
             "lenders": [],
-            "origin": "AO",
-            "destination": "AX"
+            "origin": "AW",
+            "destination": "AI"
         }
     }
 }

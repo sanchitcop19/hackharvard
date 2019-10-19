@@ -32,22 +32,19 @@ body{
 	(function(){
 		var gap = 2;
 
-		var ranDataset = function () {
-			var ran = Math.random();
+		var ranDataset2 = function () {
+			var credit_score = {{ credit_score }};
 
 			return    [
-				{index: 0, name: 'move', icon: "\uF105", percentage: ran * 60 + 30},
-				{index: 1, name: 'exercise', icon: "\uF101", percentage: ran * 60 + 30},
-				{index: 2, name: 'stand', icon: "\uF106", percentage: ran * 60 + 30}
+				{index: 0, name: 'move', icon: "\uF105", percentage: credit_score}
 			];
 
 		};
-
-		var ranDataset2 = function () {
-			var ran = Math.random();
+		var ranDataset3 = function () {
+			var confidence = {{ confidence }};
 
 			return    [
-				{index: 0, name: 'move', icon: "\uF105", percentage: ran * 60 + 30}
+				{index: 0, name: 'move', icon: "\uF105", percentage: confidence}
 			];
 
 		};
@@ -194,10 +191,8 @@ body{
 						});
 
 				field.select("text.completed").text(function (d) {
-					return Math.round(d.percentage /100 * 600);
+					return Math.round(d.percentage /100 * 100);
 				});
-
-//				setTimeout(update, 2000);
 
 			}
 
@@ -213,9 +208,8 @@ body{
 		}
 
 
-//		build(ranDataset);
 		build(ranDataset2,true, true);
-    build(ranDataset2,true, false);
+    build(ranDataset3,true, false);
 
 
 	})()

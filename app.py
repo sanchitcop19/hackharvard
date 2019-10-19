@@ -95,10 +95,22 @@ def home():
 def credit_score():
     return jsonify({'score': 600})
 
-@app.route('/lender/<name>')
+def invest(lender, lendee, amount):
+    lender_data = store['lenders'][lender]
+    store['lenders'][lender]['invested'] += amount
+    store['lenders'][lender]['total'] -= amount
+    store['lendees'][lendee]['done'] += amount
+    store['lendees'][lendee]['goal'] -= amount
+
+@app.route('/lender/<name>', methods = ["GET", "POST"])
 def get_lender(name):
-    response = jsonify({'data': store['lenders'][name]})
-    return response
+    lender_data = store['lenders'][name]
+    form = InvestForm()
+    amount = 2
+    if form.validate_on_submit():
+        for lendee in store['lendees']:
+            invest(name, lendee, amount)
+    return render_template('forms/lender.html', name = name, total = lender_data['total'], invested = lender_data['invested'], form = form)
 
 @app.route('/lendee/<name>')
 def get_lendee(name):
@@ -120,9 +132,9 @@ def login():
 def register_lendee():
     form = RegisterLendeeForm(request.form)
     if form.validate_on_submit():
-        # TODO: calculate credit score
-
-        credit_score = 0
+        confidence, credit_score = compute_credit_confidence(train_model(), [int(form.age.data), int(form.job.data), int(form.credit_amount.data), int(form.duration.data), int(form.sex.data), int(form.housing_own.data), int(form.housing_rent.data), int(form.savings_moderate.data), int(form.savings_quite_rich.data), int(form.savings_rich.data), int(form.check_moderate.data), int(form.check_rich.data)])
+        confidence = 80
+        credit_score = 750
         store['lendees'][form.name.data] = {
             "goal": int(form.goal.data),
             "done": 0,
@@ -134,7 +146,7 @@ def register_lendee():
         with open("store.json", "w") as f:
             import json
             json.dump(store, f, indent=4)
-        return render_template('forms/score.html')
+        return render_template('forms/score.html', credit_score = credit_score, confidence = confidence)
     return render_template('forms/register_lendee.html', form=form, submitted = False)
 
 @app.route('/request-investment/<name>')
