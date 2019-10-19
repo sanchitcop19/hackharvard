@@ -38,7 +38,7 @@
             "goal": 1000,
             "done": 0,
             "credit_score": 0,
-            "lenders": [],
+            "lenders": ["Sanchit", "Yuval"],
             "origin": "KZ",
             "destination": "FR"
         },
