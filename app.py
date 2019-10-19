@@ -120,7 +120,7 @@ def login():
 def register_lendee():
     form = RegisterLendeeForm(request.form)
     if form.validate_on_submit():
-        confidence, credit_score = compute_credit_confidence(train_model(), [form.age.data, form.job.data, form.credit_amount.data, form.duration.data, form.sex.data, form.housing_own.data, form.housing_rent.data, form.savings_moderate.data, form.savings_quite_rich.data, form.savings_rich.data, form.check_moderate.data, form.check_rich.data])
+        confidence, credit_score = compute_credit_confidence(train_model(), [int(form.age.data), int(form.job.data), int(form.credit_amount.data), int(form.duration.data), int(form.sex.data), int(form.housing_own.data), int(form.housing_rent.data), int(form.savings_moderate.data), int(form.savings_quite_rich.data), int(form.savings_rich.data), int(form.check_moderate.data), int(form.check_rich.data)])
         store['lendees'][form.name.data] = {
             "goal": int(form.goal.data),
             "done": 0,
