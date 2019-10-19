@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="32820a7e-0885-4064-b8d1-a0093a3d6e48" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/static/css/montserrat-font.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/register_lendee2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/forms/register_lendee2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/lendor.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/lendor.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/forms/lender.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/forms/lender.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,38 +26,38 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="306" />
-          <entry key="html" value="1945" />
+          <entry key="html" value="2855" />
           <entry key="js" value="27" />
           <entry key="json" value="63" />
-          <entry key="py" value="3079" />
+          <entry key="py" value="3191" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="306" />
-          <entry key="HTML" value="1945" />
+          <entry key="HTML" value="2855" />
           <entry key="JSON" value="63" />
           <entry key="JavaScript" value="27" />
-          <entry key="Python" value="3079" />
+          <entry key="Python" value="3191" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="5" />
-          <entry key="html" value="18" />
+          <entry key="html" value="21" />
           <entry key="js" value="6" />
           <entry key="json" value="10" />
-          <entry key="py" value="28" />
+          <entry key="py" value="29" />
           <entry key="rnc" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="5" />
-          <entry key="HTML" value="18" />
+          <entry key="HTML" value="21" />
           <entry key="JSON" value="10" />
           <entry key="JavaScript" value="6" />
-          <entry key="Python" value="28" />
+          <entry key="Python" value="29" />
           <entry key="RNG Compact" value="2" />
         </counts>
       </usages-collector>
@@ -97,28 +98,65 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
+            <state relative-caret-position="477">
+              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
-                <marker date="1571503487630" expanded="true" signature="877:2062" ph="..." />
-                <marker date="1571503487630" expanded="true" signature="2024:2062" ph="..." />
-                <marker date="1571503487630" expanded="true" signature="2087:2092" ph="..." />
+                <marker date="1571510110339" expanded="true" signature="877:2111" ph="..." />
+                <marker date="1571510110339" expanded="true" signature="2073:2111" ph="..." />
+                <marker date="1571510110339" expanded="true" signature="2136:2141" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="104" column="55" lean-forward="true" selection-start-line="104" selection-start-column="55" selection-end-line="104" selection-end-column="55" />
+            <state relative-caret-position="409">
+              <caret line="152" column="50" selection-start-line="152" selection-start-column="50" selection-end-line="152" selection-end-column="50" />
               <folding>
                 <element signature="e#169#246#0" expanded="true" />
-                <marker date="1571503584448" expanded="true" signature="2349:2587" ph="..." />
-                <marker date="1571503584448" expanded="true" signature="3128:3130" ph="..." />
+                <marker date="1571509096783" expanded="true" signature="2418:2711" ph="..." />
+                <marker date="1571509096783" expanded="true" signature="3252:3254" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/forms/register_lendee.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="395">
+              <caret line="95" column="37" lean-forward="true" selection-start-line="95" selection-start-column="14" selection-end-line="95" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/forms/register_lendee2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="274">
+              <caret line="112" column="71" selection-start-line="112" selection-start-column="71" selection-end-line="112" selection-end-column="71" />
+              <folding>
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#1;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#1;n#div#1;n#div#1;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#2;n#div#1;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#1;n#div#2;n#div#1;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#3;n#div#1;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#1;n#div#3;n#div#1;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/flask/app.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="1948" selection-start-line="1948" selection-end-line="1948" />
             </state>
           </provider>
         </entry>
@@ -142,6 +180,7 @@
       <find>dataset</find>
       <find>after</find>
       <find>jquery</find>
+      <find>Infoma</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -162,9 +201,10 @@
         <option value="$PROJECT_DIR$/templates/forms/lendor.html" />
         <option value="$PROJECT_DIR$/templates/layouts/form.html" />
         <option value="$PROJECT_DIR$/static/css/lendor.css" />
-        <option value="$PROJECT_DIR$/forms.py" />
         <option value="$PROJECT_DIR$/templates/forms/lender.html" />
         <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/forms.py" />
+        <option value="$PROJECT_DIR$/templates/forms/register_lendee2.html" />
       </list>
     </option>
   </component>
@@ -224,12 +264,13 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/templates/forms" />
       <recent name="$PROJECT_DIR$/static/css" />
+      <recent name="$PROJECT_DIR$/templates/forms" />
       <recent name="$PROJECT_DIR$/static/js" />
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/forms" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -286,7 +327,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2494043" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2494043" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" />
@@ -294,8 +335,8 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32876712" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32876712" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32876712" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -331,18 +372,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app.py</url>
-          <line>153</line>
+          <line>156</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app.py</url>
-          <line>134</line>
+          <line>137</line>
           <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app.py</url>
-          <line>110</line>
-          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -436,13 +472,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/flask/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="1934" selection-start-line="1934" selection-end-line="1934" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/pycharm.jar!/resources/html5-schema/html5/core-scripting.rnc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="91">
@@ -519,22 +548,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/forms/register_lendee.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="96" column="23" selection-start-line="96" selection-start-column="23" selection-end-line="96" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/lendor.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/store.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="915">
-          <caret line="61" selection-start-line="61" selection-end-line="61" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/forms/lender.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -553,6 +568,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/store.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="915">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/flask/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="1948" selection-start-line="1948" selection-end-line="1948" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/layouts/form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
@@ -562,25 +591,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
+        <state relative-caret-position="477">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
-            <marker date="1571503487630" expanded="true" signature="877:2062" ph="..." />
-            <marker date="1571503487630" expanded="true" signature="2024:2062" ph="..." />
-            <marker date="1571503487630" expanded="true" signature="2087:2092" ph="..." />
+            <marker date="1571510110339" expanded="true" signature="877:2111" ph="..." />
+            <marker date="1571510110339" expanded="true" signature="2073:2111" ph="..." />
+            <marker date="1571510110339" expanded="true" signature="2136:2141" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="104" column="55" lean-forward="true" selection-start-line="104" selection-start-column="55" selection-end-line="104" selection-end-column="55" />
+        <state relative-caret-position="409">
+          <caret line="152" column="50" selection-start-line="152" selection-start-column="50" selection-end-line="152" selection-end-column="50" />
           <folding>
             <element signature="e#169#246#0" expanded="true" />
-            <marker date="1571503584448" expanded="true" signature="2349:2587" ph="..." />
-            <marker date="1571503584448" expanded="true" signature="3128:3130" ph="..." />
+            <marker date="1571509096783" expanded="true" signature="2418:2711" ph="..." />
+            <marker date="1571509096783" expanded="true" signature="3252:3254" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/forms/register_lendee.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="95" column="37" lean-forward="true" selection-start-line="95" selection-start-column="14" selection-end-line="95" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/forms/register_lendee2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="112" column="71" selection-start-line="112" selection-start-column="71" selection-end-line="112" selection-end-column="71" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#1;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#1;n#div#1;n#div#1;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#2;n#div#1;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#1;n#div#2;n#div#1;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#3;n#div#1;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#1;n#div#3;n#div#1;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

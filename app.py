@@ -96,11 +96,14 @@ def credit_score():
     return jsonify({'score': 600})
 
 def invest(lender, lendee, amount):
+    if lender in store['lendees'][lendee]['lenders']:
+        return
     lender_data = store['lenders'][lender]
     store['lenders'][lender]['invested'] += amount
     store['lenders'][lender]['total'] -= amount
     store['lendees'][lendee]['done'] += amount
     store['lendees'][lendee]['goal'] -= amount
+    store['lendees'][lendee]['lenders'].append(lender)
 
 @app.route('/lender/<name>', methods = ["GET", "POST"])
 def get_lender(name):
@@ -147,7 +150,7 @@ def register_lendee():
             import json
             json.dump(store, f, indent=4)
         return render_template('forms/score.html', credit_score = credit_score, confidence = confidence)
-    return render_template('forms/register_lendee.html', form=form, submitted = False)
+    return render_template('forms/register_lendee2.html', form=form, submitted = False)
 
 @app.route('/request-investment/<name>')
 def request_investment(name):
