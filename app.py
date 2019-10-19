@@ -120,9 +120,7 @@ def login():
 def register_lendee():
     form = RegisterLendeeForm(request.form)
     if form.validate_on_submit():
-        # TODO: calculate credit score
-
-        credit_score = 0
+        confidence, credit_score = compute_credit_confidence(train_model(), [form.age.data, form.job.data, form.credit_amount.data, form.duration.data, form.sex.data, form.housing_own.data, form.housing_rent.data, form.savings_moderate.data, form.savings_quite_rich.data, form.savings_rich.data, form.check_moderate.data, form.check_rich.data])
         store['lendees'][form.name.data] = {
             "goal": int(form.goal.data),
             "done": 0,
@@ -134,7 +132,7 @@ def register_lendee():
         with open("store.json", "w") as f:
             import json
             json.dump(store, f, indent=4)
-        return render_template('forms/score.html')
+        return render_template('forms/score.html', credit_score = credit_score, confidence = confidence)
     return render_template('forms/register_lendee.html', form=form, submitted = False)
 
 @app.route('/request-investment/<name>')

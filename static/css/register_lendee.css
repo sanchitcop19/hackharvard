@@ -16,10 +16,24 @@ fieldset {
 label {
   position: absolute;
   top: 18px;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.5);
   transform-origin: left;
   transition: all 0.3s ease;
 
+}
+
+.form-labels{
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#col1{
+    position: absolute;
+    left: 0%;
+}
+
+#col2{
+    position: absolute;
+    left: 50%;
 }
 
 input:focus ~ label {
@@ -39,6 +53,7 @@ input {
   border: none;
   margin-top: 10px;
   background: black;
+  margin: 0.5em;
 }
 
 input:focus {

@@ -1,5 +1,5 @@
 from flask_wtf import Form, FlaskForm
-from wtforms import StringField, PasswordField, DecimalField, TextField, SelectField
+from wtforms import StringField, PasswordField, DecimalField, TextField, SelectField, BooleanField, RadioField
 from wtforms.validators import DataRequired, EqualTo, Length
 import pycountry
 
@@ -16,6 +16,18 @@ class CountryDestinationSelectField(SelectField):
 
 class RegisterLendeeForm(FlaskForm):
     name = StringField('name', validators=[DataRequired()])
+    age = DecimalField('age', validators=[DataRequired()])
+    job = BooleanField('job', validators=[DataRequired()])
+    credit_amount = DecimalField('credit_amount', validators=[DataRequired()])
+    duration = DecimalField('duration', validators=[DataRequired()])
+    sex = SelectField('sex', choices=[('0', 'Female'), ('1', 'Male')])
+    housing_own = BooleanField('housing_own')
+    housing_rent = BooleanField('housing_rent')
+    savings_moderate = BooleanField('savings_moderate')
+    savings_quite_rich = BooleanField('savings_quite_rich')
+    savings_rich = BooleanField('savings_rich')
+    check_moderate = BooleanField('check_moderate')
+    check_rich = BooleanField('check_rich')
     income = DecimalField('income', validators=[DataRequired()])
     rent = DecimalField('rent', validators=[DataRequired()])
     goal = DecimalField('goal', validators=[DataRequired()])
