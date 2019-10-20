@@ -165,6 +165,16 @@
             "destination": "AI",
             "id": "5dabaf153c8c2216c9fcb4da",
             "account_id": "5dabaf173c8c2216c9fcb4db"
+        },
+        "john": {
+            "goal": 1000,
+            "done": 0,
+            "credit_score": 501,
+            "lenders": [],
+            "origin": "AF",
+            "destination": "AX",
+            "id": "5dabf67a3c8c2216c9fcb571",
+            "account_id": "5dabf67b3c8c2216c9fcb572"
         }
     }
 }

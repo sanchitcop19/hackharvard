@@ -191,10 +191,10 @@ def register_lendee():
         confidence, credit_score = compute_credit_confidence(train_model(), [int(form.age.data), int(form.job.data), int(form.credit_amount.data), int(form.duration.data), int(form.sex.data), int(form.housing_own.data), int(form.housing_rent.data), int(form.savings_moderate.data), int(form.savings_quite_rich.data), int(form.savings_rich.data), int(form.check_moderate.data), int(form.check_rich.data)])
         confidence = max(int(confidence*100), 60)
         credit_score = int(credit_score)
-        name = form.name.data.split(' ')
+        name = form.name.data
         customer = {
-            "first_name": name[0],
-            "last_name": name[1],
+            "first_name": name,
+            "last_name": name,
             "address": {
                 "street_number": "2021",
                 "street_name": "Sweet Home Rd",
