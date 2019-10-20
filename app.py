@@ -116,6 +116,39 @@ def invest(lender, lendee, amount):
     store['lendees'][lendee]['goal'] -= amount
     store['lendees'][lendee]['lenders'].append(lender)
 
+    lender_aid = "5dabb25b3c8c2216c9fcb547"
+    lendee_aid = "5dabb25b3c8c2216c9fcb547"
+    for l in store['lenders']:
+        if l == lender:
+            try:
+                lender_aid = store['lenders'][l]['account_id']
+            except:
+                pass
+    for l in store['lendees']:
+        if l == lendee:
+            try:
+                lendee_aid = store['lendees'][l]['account_id']
+            except:
+                pass
+    payload = {
+        "medium": "balance",
+        "transaction_date": "2019-10-19",
+        "status": "pending",
+        "description": "string",
+        "amount": amount
+    }
+    response = requests.post('http://api.reimaginebanking.com/accounts/'+ lendee_aid + '/deposits?key=e8c6c6874d7cd2e3c2ce8e5028b00aa0', data=json.dumps(payload))
+    payload = {
+        "medium": "balance",
+        "payee_id": "string",
+        "transaction_date": "2019-10-19",
+        "status": "pending",
+        "description": "string",
+        "amount": 100
+    }
+    response = requests.post('http://api.reimaginebanking.com/accounts/' + lender_aid + '/deposits?key=e8c6c6874d7cd2e3c2ce8e5028b00aa0',data=json.dumps(payload))
+    i = 0
+
 @app.route('/lender/<name>', methods = ["GET", "POST"])
 def get_lender(name):
     lender_data = store['lenders'][name]
@@ -124,14 +157,17 @@ def get_lender(name):
     if form.validate_on_submit():
         for lendee in store['lendees']:
             invest(name, lendee, amount)
-    save_store()
+        save_store()
     return render_template('forms/lender.html', name = name, total = lender_data['total'], invested = lender_data['invested'], form = form)
 
 @app.route('/lendee/<name>')
 def get_lendee(name):
     response = jsonify({'data': store['lendees'][name]})
     # return response
-    return render_template("pages/lendee_page.html", name=name, lenders=store['lendees'][name]["lenders"])
+    done = store['lendees'][name]['done']
+    goal = store['lendees'][name]['goal']
+    credit = store['lendees'][name]['credit_score']
+    return render_template("pages/lendee_page.html", name=name, lenders=store['lendees'][name]["lenders"], done = done, goal = goal, credit = credit)
 
 @app.route('/about')
 def about():
@@ -168,9 +204,13 @@ def register_lendee():
                                  data=json.dumps(customer), headers=headers)
         _id = json.loads(response.content)['objectCreated']['_id']
         account = {
-
+                "type": "Credit Card",
+                "nickname": "yuval",
+                "rewards": 0,
+                "balance": 0
         }
-        response = requests.post('http://api.reimaginebanking.com/customers/'+_id+'/accounts?key=e8c6c6874d7cd2e3c2ce8e5028b00aa0', data=json.dumps(customer), headers=headers)
+        response = requests.post('http://api.reimaginebanking.com/customers/'+_id+'/accounts?key=e8c6c6874d7cd2e3c2ce8e5028b00aa0', data=json.dumps(account), headers=headers)
+        account_id = response.json()['objectCreated']['_id']
         store['lendees'][form.name.data] = {
             "goal": int(form.goal.data),
             "done": 0,
@@ -178,7 +218,8 @@ def register_lendee():
             "lenders": [],
             "origin": form.country_from.data,
             "destination": form.country_to.data,
-            "id": _id
+            "id": _id,
+            "account_id": account_id
         }
         save_store()
         return render_template('forms/score.html', credit_score = credit_score, confidence = confidence)

@@ -275,6 +275,7 @@ html, body {
   background-size:100% 100%;
   background-position:0% 0%;
   font-family: 'Source Sans Pro', sans-serif;
+  background-color: #001a33;
 }
 
 #risk-tolerance{
@@ -284,16 +285,27 @@ html, body {
 .money-header{
 	color: white;
 	text-align: center;
+	font-size: 36px;
+}
+.containerp{
+	border-radius: 1em;
+	background-color: rgb(144, 173, 254, 0.8);
+}
+.containerw{
+	background-color: rgba(255, 255, 255, 0.8);
+}
+body{
+	overflow: visible;
 }
 </style>
 <div class="grid">
 	<article class="containerp module desktop-6 tablet-4">
 		<h3 class="money-header">Total Funds</h3>
-<h1 class = "money">{{ total }}</h1>
+<h1 class = "money">${{ total }}</h1>
 	</article>
 	<article class="containerp module desktop-6 tablet-4">
 		<h3 class="money-header">Funds Invested</h3>
-		<h1 class = "money">{{ invested }}</h1>
+		<h1 class = "money">${{ invested }}</h1>
 	</article>
 	<article class="containerw module desktop-12 tablet-4">
   <h1 id = "risk-tolerance">Risk Tolerance</h1>
@@ -307,12 +319,14 @@ html, body {
   <input type="text" id="amount" style = "padding: 0"/>
 	</article>
 	<article class="containerp module desktop-6 tablet-4">
-	<input type = "submit" id = "change-rt" value="Change Risk Tolerance"/>
+		<form method = "post">
+			<input style = "background-color: transparent; font-size: 1.6em; padding: 0; font-weight: 500" type = "submit" id = "change-rt" value="Change Risk Tolerance"/>
+		</form>
 	</article>
 	<article class="containerp module desktop-6 tablet-4">
 		<form method = "post">
 			{{ form.hidden_tag() }}
-			{{ form.invest(id = "invest")}}
+			{{ form.invest(id = "invest", style = "background-color: rgb(144, 173, 254, 0.0); font-size: 1.6em; padding: 0; font-weight: 500")}}
 		</form>
 
 	</article>
