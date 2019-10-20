@@ -98,6 +98,10 @@ def login_required(test):
 def home():
     return redirect(url_for('register_lendee'))
 
+@app.route('/index')
+def index():
+    return redirect(url_for('register_lendee'))
+
 @app.route('/credit-score')
 def credit_score():
     return jsonify({'score': 600})
@@ -183,6 +187,9 @@ def login():
     form = LoginForm(request.form)
     return render_template('forms/login.html', form=form)
 
+@app.route('/register')
+def register():
+    return redirect(url_for('register_lendee'))
 
 @app.route('/register_lendee', methods = ["GET", "POST"])
 def register_lendee():
