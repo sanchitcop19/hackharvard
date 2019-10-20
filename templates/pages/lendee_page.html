@@ -1,0 +1,184 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+ .table {
+	border: solid 1px black;
+	border-spacing: 0;
+	font: normal 13px Arial, sans-serif;
+	width: 70%;
+	display: block;
+	height: auto;
+    overflow-y: scroll;
+}
+
+thead th {
+	background-color: white;
+	border: solid 1px black;
+	color: #2271dd;
+	padding: 10px;
+	text-align: left;
+	cursor: pointer;
+	position: sticky;
+	top: 0;
+}
+
+tbody td {
+	border: solid 1px black;
+	color: black;
+	padding: 5px;
+    background: white;
+}
+
+.selected {
+	background-color: #75e2e9;
+}
+
+ h1{
+     color: white;
+font-family: 'Montserrat', sans-serif;
+ }
+
+ h1.g {
+     color: gray;
+ }
+
+.md {
+	width: 30%;
+}
+.sm {
+	width: 10%;
+}
+
+.progress-bar {
+    margin-bottom: 2px;
+}
+
+.outer{
+    height: 100px;
+    width: 400px;
+    border: 1px solid black;
+    margin-top:20px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+.inner{
+    height: 100px;
+    width: 190px;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-right: 10px;
+    background: rgb(82, 158, 14);
+    position: absolute;
+}
+
+.status{float:left;}
+.sofar{color: white; margin-top: 20px;}
+
+ /* .total{
+    color: black;
+    margin-left: 420px;
+    float:right;
+    margin-bottom: 20px;
+    position:absolute;
+    }
+  */
+
+ body {
+     padding: 50px 50px 10px 50px;
+     background: rgb(139,198,236);
+ }
+ .containerp {
+     background: #4835d4;
+ }
+
+ .containerw {
+     background: white;
+ }
+
+ .third {
+     width: 400px;
+     margin-left: 2px;
+     margin-right: 2px;
+     float: left;
+ }
+
+ .half {
+     width: 900px;
+     margin-left: 2px;
+     margin-right: 2px;
+     float: right;
+ }
+
+ p {
+     color: white;
+ }
+
+</style>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="lendee_page" >
+        <div >
+            <div class="containerp jumbotron third">
+                <h1> {{ name.title() }}. </h1>
+                <p>Your estimated credit score is <b>615</b>.</p>
+            </div>
+            <div class="containerw jumbotron half">
+                <center>
+                    <progressbar total="$1000" sofar="$490"></progressbar>
+                </center>
+            </div>
+        </div>
+        <center>
+            <table class="table" id='countryTable'>
+                <thead>
+                <tr>
+                    <th class="sm">Lender</th>
+                    <th class="sm">Amount</th>
+                    <th class="sm">Interest Rate</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for lender in lenders %}
+                    <tr>
+                        <td>{{ lender.title() }}</td>
+                        <td>$2</td>
+                        <td>4%</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </center>
+    </div>
+</body>
+
+<script>
+ Vue.component("progressbar", {
+     props: ["total", "sofar"],
+     template:`
+         <div>
+             <div >
+                <h1 class="total_pre g"> You've raised</h1>
+                 <div class="outer">
+                     <div class="inner">
+                         <h1 class="sofar"> $490</h1>
+                     </div>
+                 </div>
+                    <h1 class="total g"> out of $1000</h1>
+             </div>
+         </div>
+     `,
+     created(){
+         console.log(this.total);
+     }
+ });
+ 
+ new Vue({
+        el: '#lendee_page',
+        /* components:[progressbar] */
+    });
+
+</script>
+
+</body>

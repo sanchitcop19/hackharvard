@@ -17,7 +17,7 @@ DONATION_AMOUNT = 2
 #----------------------------------------------------------------------------#
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 app.config.from_object('config')
 
 store = {
@@ -52,6 +52,14 @@ store = {
                 "credit_score": 0,
                 "lenders": [
 
+                ]
+            },
+            "bob": {
+                "goal": 0,
+                "done": 0,
+                "credit_score": 0,
+                "lenders": [
+                    "Horatio", "Spiderman"
                 ]
             }
         }
@@ -122,7 +130,8 @@ def get_lender(name):
 @app.route('/lendee/<name>')
 def get_lendee(name):
     response = jsonify({'data': store['lendees'][name]})
-    return response
+    # return response
+    return render_template("pages/lendee_page.html", name=name, lenders=store['lendees'][name]["lenders"])
 
 @app.route('/about')
 def about():
