@@ -38,6 +38,10 @@ class RegisterLendeeForm(FlaskForm):
 class InvestForm(FlaskForm):
     invest = SubmitField('Invest!')
 
+class RiskForm(FlaskForm):
+    risk_tolerance = DecimalField('risk_tolerance')
+    risk = SubmitField('Change Risk Tolerance')
+
 class RegisterForm(Form):
     name = TextField(
         'Username', validators=[DataRequired(), Length(min=6, max=25)]

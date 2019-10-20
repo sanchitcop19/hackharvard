@@ -30,7 +30,7 @@
 /* positions */
 .a, .b, .c, .d {
   position:absolute;
-  width:50%;
+  width:{{ risk_tolerance }}%;
   height:100%;
   left:0px;
   z-index:222;
@@ -98,21 +98,21 @@ body {
 }
 /* colors */
 .a, .b {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(116,198,43,0.8)), to(rgba(116,198,43,0.8)));
-  background-image: -webkit-linear-gradient(top, rgba(116,198,43,0.8), rgba(116,198,43,0.8));
-  background-image:    -moz-linear-gradient(top, rgba(116,198,43,0.8), rgba(116,198,43,0.8));
-  background-image:      -o-linear-gradient(top, rgba(116,198,43,0.8), rgba(116,198,43,0.8));
-  background-image:         linear-gradient(to bottom, rgba(116,198,43,0.8), rgba(116,198,43,0.8));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(204,0,0,0.8)), to(rgba(204,0,0,0.8)));
+  background-image: -webkit-linear-gradient(top, rgba(204,0,0,0.8), rgba(204,0,0,0.8));
+  background-image:    -moz-linear-gradient(top, rgba(204,0,0,0.8), rgba(204,0,0,0.8));
+  background-image:      -o-linear-gradient(top, rgba(204,0,0,0.8), rgba(204,0,0,0.8));
+  background-image:         linear-gradient(to bottom, rgba(204,0,0,0.8), rgba(204,0,0,0.8));
   background-repeat:no-repeat;
   background-size:100% 100%;
   background-position:0% 0%;
 }
 .c, .d {
-  background-image:-webkit-gradient(linear, left top, left bottom, from(rgba(116,198,43,0.5)), to(rgba(116,198,43,0.5)));
-  background-image:-webkit-linear-gradient(top, rgba(116,198,43,0.5), rgba(116,198,43,0.5));
-  background-image:   -moz-linear-gradient(top, rgba(116,198,43,0.5), rgba(116,198,43,0.5));
-  background-image:     -o-linear-gradient(top, rgba(116,198,43,0.5), rgba(116,198,43,0.5));
-  background-image:        linear-gradient(to bottom, rgba(116,198,43,0.5), rgba(116,198,43,0.5));
+  background-image:-webkit-gradient(linear, left top, left bottom, from(rgba(204,0,0,0.5)), to(rgba(204,0,0,0.5)));
+  background-image:-webkit-linear-gradient(top, rgba(204,0,0,0.5), rgba(204,0,0,0.5));
+  background-image:   -moz-linear-gradient(top, rgba(204,0,0,0.5), rgba(204,0,0,0.5));
+  background-image:     -o-linear-gradient(top, rgba(204,0,0,0.5), rgba(204,0,0,0.5));
+  background-image:        linear-gradient(to bottom, rgba(204,0,0,0.5), rgba(204,0,0,0.5));
   background-repeat:no-repeat;
   background-size:100% 100%;
   background-position:0% 0%;
@@ -222,7 +222,7 @@ p {
 .credits a {
   position:relative;
   display:inline-block;
-  color:#529e0e;
+  color:#cc0000;
   text-decoration:none;
 }
 .credits a:after {
@@ -232,7 +232,7 @@ p {
   bottom:-1px;
   width:0%;
   height:1px;
-  background:#529e0e;
+  background:#cc0000;
   -webkit-transition:width 0.1s;
   -moz-transition:   width 0.1s;
   -o-transition:     width 0.1s;
@@ -249,7 +249,7 @@ p {
   font-family: 'Exo', sans-serif;
   font-weight:800;
   font-size:4rem;
-  color:#529e0e;
+  color:#cc0000;
   background:transparent;
   border:none;
 }
@@ -320,7 +320,9 @@ body{
 	</article>
 	<article class="containerp module desktop-6 tablet-4">
 		<form method = "post">
-			<input style = "background-color: transparent; font-size: 1.6em; padding: 0; font-weight: 500" type = "submit" id = "change-rt" value="Change Risk Tolerance"/>
+			{{ risk_form.hidden_tag() }}
+			{{ risk_form.risk_tolerance(style = "display: none") }}
+			{{ risk_form.risk(id = "risk", style = "background-color: transparent; font-size: 1.6em; padding: 0; font-weight: 500") }}
 		</form>
 	</article>
 	<article class="containerp module desktop-6 tablet-4">
@@ -338,16 +340,17 @@ body{
 $(document).ready(function () {
   $( "#slider-range-min" ).slider({
       range: "min",
-      value: 50,
+      value: {{ risk_tolerance }},
       min: 0,
       max: 100,
       slide: function( event, ui ) {
-        $( "#amount" ).val(ui.value + "");
+        $( "#amount" ).val(ui.value + "%");
         $(".a, .b, .c, .d").width(ui.value + "%");
+        $("#risk_tolerance").val(ui.value);
       }
     });
     $(".ui-slider-handle").text("<>");
-    $( "#amount" ).val($( "#slider-range-min" ).slider( "value") + "");
+    $( "#amount" ).val($( "#slider-range-min" ).slider( "value") + "%");
 });
 
 </script>

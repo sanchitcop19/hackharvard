@@ -153,12 +153,16 @@ def invest(lender, lendee, amount):
 def get_lender(name):
     lender_data = store['lenders'][name]
     form = InvestForm()
+    risk_form = RiskForm()
     amount = 2
     if form.validate_on_submit():
         for lendee in store['lendees']:
             invest(name, lendee, amount)
         save_store()
-    return render_template('forms/lender.html', name = name, total = lender_data['total'], invested = lender_data['invested'], form = form)
+    if risk_form.validate_on_submit():
+        store['lenders'][name]['risk_tolerance'] = int(risk_form.risk_tolerance.data)
+        save_store()
+    return render_template('forms/lender.html', name = name, total = lender_data['total'], invested = lender_data['invested'], form = form, risk_form = risk_form, risk_tolerance = store['lenders'][name]['risk_tolerance'])
 
 @app.route('/lendee/<name>')
 def get_lendee(name):
