@@ -23,109 +23,143 @@
             "risk_tolerance": 45,
             "id": "5dabb25b3c8c2216c9fcb547",
             "account_id": "5dabb2dd3c8c2216c9fcb548"
+        },
+        "yuval": {
+            "total": 882,
+            "invested": 18,
+            "amount": 1,
+            "risk_tolerance": 53,
+            "id": "5dabb25b3c8c2216c9fcb547",
+            "account_id": "5dabb2dd3c8c2216c9fcb548"
+        },
+        "michael": {
+            "total": 382,
+            "invested": 18,
+            "amount": 1,
+            "risk_tolerance": 69,
+            "id": "5dabb25b3c8c2216c9fcb547",
+            "account_id": "5dabb2dd3c8c2216c9fcb548"
         }
     },
     "lendees": {
         "yuval": {
-            "goal": 994,
-            "done": 6,
+            "goal": 990,
+            "done": 10,
             "credit_score": 640,
             "lenders": [
                 "sanchit",
                 "vignesh",
-                "nien"
+                "nien",
+                "yuval",
+                "michael"
             ]
         },
         "nien": {
-            "goal": 244,
-            "done": 6,
+            "goal": 240,
+            "done": 10,
             "credit_score": 570,
             "lenders": [
                 "sanchit",
                 "vignesh",
-                "nien"
+                "nien",
+                "yuval",
+                "michael"
             ]
         },
         "Sanchit": {
-            "goal": 94,
-            "done": 6,
+            "goal": 90,
+            "done": 10,
             "credit_score": 660,
             "lenders": [
                 "sanchit",
                 "vignesh",
-                "nien"
+                "nien",
+                "yuval",
+                "michael"
             ],
             "origin": "VA",
             "destination": "AF"
         },
         "bob": {
-            "goal": 994,
-            "done": 6,
+            "goal": 990,
+            "done": 10,
             "credit_score": 590,
             "lenders": [
                 "sanchit",
                 "vignesh",
-                "nien"
+                "nien",
+                "yuval",
+                "michael"
             ],
             "origin": "KZ",
             "destination": "FR"
         },
         "asd": {
-            "goal": 144,
-            "done": 6,
+            "goal": 140,
+            "done": 10,
             "credit_score": 550,
             "lenders": [
                 "sanchit",
                 "vignesh",
-                "nien"
+                "nien",
+                "yuval",
+                "michael"
             ],
             "origin": "AF",
             "destination": "AF"
         },
         "sanchit": {
-            "goal": 1994,
-            "done": 6,
+            "goal": 1990,
+            "done": 10,
             "credit_score": 590,
             "lenders": [
                 "sanchit",
                 "vignesh",
-                "nien"
+                "nien",
+                "yuval",
+                "michael"
             ],
             "origin": "AO",
             "destination": "AI"
         },
         "Sanchit Batra": {
-            "goal": 1994,
-            "done": 6,
+            "goal": 1990,
+            "done": 10,
             "credit_score": 750,
             "lenders": [
                 "sanchit",
                 "vignesh",
-                "nien"
+                "nien",
+                "yuval",
+                "michael"
             ],
             "origin": "US",
             "destination": "AX"
         },
         "yuval gutman": {
-            "goal": 994,
-            "done": 6,
+            "goal": 990,
+            "done": 10,
             "credit_score": 607,
             "lenders": [
                 "sanchit",
                 "vignesh",
-                "nien"
+                "nien",
+                "yuval",
+                "michael"
             ],
             "origin": "AO",
             "destination": "AO"
         },
         "sanchit batra": {
-            "goal": 994,
-            "done": 6,
+            "goal": 990,
+            "done": 10,
             "credit_score": 528,
             "lenders": [
                 "sanchit",
                 "vignesh",
-                "nien"
+                "nien",
+                "yuval",
+                "michael"
             ],
             "origin": "AD",
             "destination": "AI",
