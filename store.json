@@ -39,6 +39,86 @@
             "risk_tolerance": 69,
             "id": "5dabb25b3c8c2216c9fcb547",
             "account_id": "5dabb2dd3c8c2216c9fcb548"
+        },
+        "trent": {
+            "total": 200,
+            "invested": 0,
+            "amount": 1,
+            "risk_tolerance": 43,
+            "id": "5dabb25b3c8c2216c9fcb547",
+            "account_id": "5dabb2dd3c8c2216c9fcb548"
+        },
+        "reznor": {
+            "total": 300,
+            "invested": 0,
+            "amount": 1,
+            "risk_tolerance": 43,
+            "id": "5dabb25b3c8c2216c9fcb547",
+            "account_id": "5dabb2dd3c8c2216c9fcb548"
+        },
+        "danny": {
+            "total": 100,
+            "invested": 0,
+            "amount": 1,
+            "risk_tolerance": 43,
+            "id": "5dabb25b3c8c2216c9fcb547",
+            "account_id": "5dabb2dd3c8c2216c9fcb548"
+        },
+        "steven": {
+            "total": 400,
+            "invested": 0,
+            "amount": 1,
+            "risk_tolerance": 43,
+            "id": "5dabb25b3c8c2216c9fcb547",
+            "account_id": "5dabb2dd3c8c2216c9fcb548"
+        },
+        "george": {
+            "total": 450,
+            "invested": 0,
+            "amount": 1,
+            "risk_tolerance": 43,
+            "id": "5dabb25b3c8c2216c9fcb547",
+            "account_id": "5dabb2dd3c8c2216c9fcb548"
+        },
+        "waldo": {
+            "total": 500,
+            "invested": 0,
+            "amount": 1,
+            "risk_tolerance": 43,
+            "id": "5dabb25b3c8c2216c9fcb547",
+            "account_id": "5dabb2dd3c8c2216c9fcb548"
+        },
+        "hermes": {
+            "total": 500,
+            "invested": 0,
+            "amount": 1,
+            "risk_tolerance": 43,
+            "id": "5dabb25b3c8c2216c9fcb547",
+            "account_id": "5dabb2dd3c8c2216c9fcb548"
+        },
+        "poseidon": {
+            "total": 200,
+            "invested": 0,
+            "amount": 1,
+            "risk_tolerance": 43,
+            "id": "5dabb25b3c8c2216c9fcb547",
+            "account_id": "5dabb2dd3c8c2216c9fcb548"
+        },
+        "zeus": {
+            "total": 200,
+            "invested": 0,
+            "amount": 1,
+            "risk_tolerance": 43,
+            "id": "5dabb25b3c8c2216c9fcb547",
+            "account_id": "5dabb2dd3c8c2216c9fcb548"
+        },
+        "athena": {
+            "total": 200,
+            "invested": 0,
+            "amount": 1,
+            "risk_tolerance": 43,
+            "id": "5dabb25b3c8c2216c9fcb547",
+            "account_id": "5dabb2dd3c8c2216c9fcb548"
         }
     },
     "lendees": {
