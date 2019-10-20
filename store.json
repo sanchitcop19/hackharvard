@@ -8,7 +8,15 @@
             "id": "5dabb25b3c8c2216c9fcb547",
             "account_id": "5dabb2dd3c8c2216c9fcb548"
         },
-        "vignesh ss": {
+        "nien": {
+            "total": 762,
+            "invested": 18,
+            "amount": 2,
+            "risk_tolerance": 32,
+            "id": "5dabb25b3c8c2216c9fcb547",
+            "account_id": "5dabb2dd3c8c2216c9fcb548"
+        },
+        "vignesh": {
             "total": 482,
             "invested": 18,
             "amount": 3,
@@ -19,96 +27,105 @@
     },
     "lendees": {
         "yuval": {
-            "goal": 996,
-            "done": 4,
+            "goal": 994,
+            "done": 6,
             "credit_score": 640,
             "lenders": [
                 "sanchit",
-                "vignesh ss"
+                "vignesh",
+                "nien"
             ]
         },
         "nien": {
-            "goal": 246,
-            "done": 4,
+            "goal": 244,
+            "done": 6,
             "credit_score": 570,
             "lenders": [
                 "sanchit",
-                "vignesh ss"
+                "vignesh",
+                "nien"
             ]
         },
         "Sanchit": {
-            "goal": 96,
-            "done": 4,
+            "goal": 94,
+            "done": 6,
             "credit_score": 660,
             "lenders": [
                 "sanchit",
-                "vignesh ss"
+                "vignesh",
+                "nien"
             ],
             "origin": "VA",
             "destination": "AF"
         },
         "bob": {
-            "goal": 996,
-            "done": 4,
+            "goal": 994,
+            "done": 6,
             "credit_score": 590,
             "lenders": [
                 "sanchit",
-                "vignesh ss"
+                "vignesh",
+                "nien"
             ],
             "origin": "KZ",
             "destination": "FR"
         },
         "asd": {
-            "goal": 146,
-            "done": 4,
+            "goal": 144,
+            "done": 6,
             "credit_score": 550,
             "lenders": [
                 "sanchit",
-                "vignesh ss"
+                "vignesh",
+                "nien"
             ],
             "origin": "AF",
             "destination": "AF"
         },
         "sanchit": {
-            "goal": 1996,
-            "done": 4,
+            "goal": 1994,
+            "done": 6,
             "credit_score": 590,
             "lenders": [
                 "sanchit",
-                "vignesh ss"
+                "vignesh",
+                "nien"
             ],
             "origin": "AO",
             "destination": "AI"
         },
         "Sanchit Batra": {
-            "goal": 1996,
-            "done": 4,
+            "goal": 1994,
+            "done": 6,
             "credit_score": 750,
             "lenders": [
                 "sanchit",
-                "vignesh ss"
+                "vignesh",
+                "nien"
             ],
             "origin": "US",
             "destination": "AX"
         },
         "yuval gutman": {
-            "goal": 996,
-            "done": 4,
+            "goal": 994,
+            "done": 6,
             "credit_score": 607,
             "lenders": [
                 "sanchit",
-                "vignesh ss"
+                "vignesh",
+                "nien"
             ],
             "origin": "AO",
             "destination": "AO"
         },
         "sanchit batra": {
-            "goal": 996,
-            "done": 4,
+            "goal": 994,
+            "done": 6,
             "credit_score": 528,
             "lenders": [
                 "sanchit",
-                "vignesh ss"
+                "vignesh",
+                "nien"
             ],
             "origin": "AD",
             "destination": "AI",

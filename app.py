@@ -160,7 +160,7 @@ def get_lender(name):
             invest(name, lendee, amount)
         save_store()
     if risk_form.validate_on_submit():
-        store['lenders'][name]['risk_tolerance'] = int(risk_form.risk_tolerance.data)
+        store['lenders'][name]['risk_tolerance'] = int(risk_form.risk_tolerance.data) if risk_form.risk_tolerance.data else lender_data['risk_tolerance']
         save_store()
     return render_template('forms/lender.html', name = name, total = lender_data['total'], invested = lender_data['invested'], form = form, risk_form = risk_form, risk_tolerance = store['lenders'][name]['risk_tolerance'])
 
