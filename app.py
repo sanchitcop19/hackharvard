@@ -4,12 +4,11 @@
 
 from flask import Flask, render_template, request, jsonify, redirect, url_for
 from flask_cors import CORS
-# from flask.ext.sqlalchemy import SQLAlchemy
 import logging
 from logging import Formatter, FileHandler
 from forms import *
-import os
 from model import *
+import json, requests
 
 DONATION_AMOUNT = 2
 
@@ -95,6 +94,10 @@ def home():
 def credit_score():
     return jsonify({'score': 600})
 
+def save_store():
+    with open("store.json", "w") as f:
+        json.dump(store, f, indent=4)
+
 def invest(lender, lendee, amount):
     if lender in store['lendees'][lendee]['lenders']:
         return
@@ -113,6 +116,7 @@ def get_lender(name):
     if form.validate_on_submit():
         for lendee in store['lendees']:
             invest(name, lendee, amount)
+    save_store()
     return render_template('forms/lender.html', name = name, total = lender_data['total'], invested = lender_data['invested'], form = form)
 
 @app.route('/lendee/<name>')
@@ -136,19 +140,38 @@ def register_lendee():
     form = RegisterLendeeForm(request.form)
     if form.validate_on_submit():
         confidence, credit_score = compute_credit_confidence(train_model(), [int(form.age.data), int(form.job.data), int(form.credit_amount.data), int(form.duration.data), int(form.sex.data), int(form.housing_own.data), int(form.housing_rent.data), int(form.savings_moderate.data), int(form.savings_quite_rich.data), int(form.savings_rich.data), int(form.check_moderate.data), int(form.check_rich.data)])
-        confidence = 80
-        credit_score = 750
+        confidence = max(int(confidence*100), 60)
+        credit_score = int(credit_score)
+        name = form.name.data.split(' ')
+        customer = {
+            "first_name": name[0],
+            "last_name": name[1],
+            "address": {
+                "street_number": "2021",
+                "street_name": "Sweet Home Rd",
+                "city": "Amherst",
+                "state": "NY",
+                "zip": "14228"
+            }
+        }
+        headers = {'content-type': 'application/json'}
+        response = requests.post('http://api.reimaginebanking.com/customers?key=e8c6c6874d7cd2e3c2ce8e5028b00aa0',
+                                 data=json.dumps(customer), headers=headers)
+        _id = json.loads(response.content)['objectCreated']['_id']
+        account = {
+
+        }
+        response = requests.post('http://api.reimaginebanking.com/customers/'+_id+'/accounts?key=e8c6c6874d7cd2e3c2ce8e5028b00aa0', data=json.dumps(customer), headers=headers)
         store['lendees'][form.name.data] = {
             "goal": int(form.goal.data),
             "done": 0,
             "credit_score": credit_score,
             "lenders": [],
             "origin": form.country_from.data,
-            "destination": form.country_to.data
+            "destination": form.country_to.data,
+            "id": _id
         }
-        with open("store.json", "w") as f:
-            import json
-            json.dump(store, f, indent=4)
+        save_store()
         return render_template('forms/score.html', credit_score = credit_score, confidence = confidence)
     return render_template('forms/register_lendee2.html', form=form, submitted = False)
 
@@ -156,7 +179,6 @@ def register_lendee():
 def request_investment(name):
     lendee = store['lendees'][name]
     for lender in store['lenders']:
-
         if store['lenders'][lender]['total'] - store['lenders'][lender]['invested'] > 0:
             investment = store['lenders'][lender]['amount']
             store['lenders'][lender]['invested'] += investment
@@ -165,6 +187,7 @@ def request_investment(name):
             if store['lendees'][name]['done'] == store['lendees'][name]['goal']:
                 break
     response = jsonify({'data': store['lendees'][name]})
+    save_store()
     return response
 
 

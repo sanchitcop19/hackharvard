@@ -1,8 +1,8 @@
 {
     "lenders": {
         "sanchit": {
-            "total": 100,
-            "invested": 0,
+            "total": 86,
+            "invested": 14,
             "amount": 2,
             "risk_tolerance": 70
         },
@@ -15,48 +15,76 @@
     },
     "lendees": {
         "yuval": {
-            "goal": 1000,
-            "done": 0,
+            "goal": 998,
+            "done": 2,
             "credit_score": 0,
-            "lenders": []
+            "lenders": [
+                "sanchit"
+            ]
         },
         "nien": {
-            "goal": 0,
-            "done": 0,
+            "goal": -2,
+            "done": 2,
             "credit_score": 0,
-            "lenders": []
+            "lenders": [
+                "sanchit"
+            ]
         },
         "Sanchit": {
-            "goal": 12,
-            "done": 0,
+            "goal": 10,
+            "done": 2,
             "credit_score": 0,
-            "lenders": [],
+            "lenders": [
+                "sanchit"
+            ],
             "origin": "VA",
             "destination": "AF"
         },
         "bob": {
-            "goal": 1000,
-            "done": 0,
+            "goal": 998,
+            "done": 2,
             "credit_score": 0,
-            "lenders": [],
+            "lenders": [
+                "sanchit"
+            ],
             "origin": "KZ",
             "destination": "FR"
         },
         "asd": {
-            "goal": 12,
-            "done": 0,
+            "goal": 10,
+            "done": 2,
             "credit_score": 0,
-            "lenders": [],
+            "lenders": [
+                "sanchit"
+            ],
             "origin": "AF",
             "destination": "AF"
         },
         "sanchit": {
+            "goal": 2000,
+            "done": 0,
+            "credit_score": 590,
+            "lenders": [],
+            "origin": "AO",
+            "destination": "AI"
+        },
+        "Sanchit Batra": {
+            "goal": 1998,
+            "done": 2,
+            "credit_score": 750,
+            "lenders": [
+                "sanchit"
+            ],
+            "origin": "US",
+            "destination": "AX"
+        },
+        "yuval gutman": {
             "goal": 1000,
             "done": 0,
-            "credit_score": 750,
+            "credit_score": 607,
             "lenders": [],
-            "origin": "AW",
-            "destination": "AI"
+            "origin": "AO",
+            "destination": "AO"
         }
     }
 }

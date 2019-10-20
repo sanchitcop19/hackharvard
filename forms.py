@@ -17,7 +17,7 @@ class CountryDestinationSelectField(SelectField):
 class RegisterLendeeForm(FlaskForm):
     name = StringField('name', validators=[DataRequired()])
     age = DecimalField('age', validators=[DataRequired()])
-    job = BooleanField('job', validators=[DataRequired()])
+    job = BooleanField('job')
     credit_amount = DecimalField('credit_amount', validators=[DataRequired()])
     duration = DecimalField('duration', validators=[DataRequired()])
     sex = SelectField('sex', choices=[('0', 'Female'), ('1', 'Male')])
