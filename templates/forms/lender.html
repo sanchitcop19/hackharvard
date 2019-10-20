@@ -62,6 +62,20 @@
   -ms-transform-origin:    0% 0%;
   transform-origin:        0% 0%;
 }
+
+body {
+     padding: 50px 50px 10px 50px;
+     background: rgb(139,198,236);
+ }
+
+ .containerp {
+     background: #4835d4;
+ }
+
+ .containerw {
+     background: white;
+ }
+
 .c {
   top:0px;
   -webkit-transform:rotateX(75deg);
@@ -265,23 +279,23 @@ html, body {
 
 #risk-tolerance{
 	text-align: center;
-	color: white;
+	color: black;
 }
 .money-header{
-	color: grey;
+	color: white;
 	text-align: center;
 }
 </style>
 <div class="grid">
-	<article class="module desktop-6 tablet-4">
+	<article class="containerp module desktop-6 tablet-4">
 		<h3 class="money-header">Total Funds</h3>
 <h1 class = "money">{{ total }}</h1>
 	</article>
-	<article class="module desktop-6 tablet-4">
+	<article class="containerp module desktop-6 tablet-4">
 		<h3 class="money-header">Funds Invested</h3>
 		<h1 class = "money">{{ invested }}</h1>
 	</article>
-	<article class="module desktop-12 tablet-4">
+	<article class="containerw module desktop-12 tablet-4">
   <h1 id = "risk-tolerance">Risk Tolerance</h1>
   <div class="cube">
     <div class="a"></div>
@@ -292,10 +306,10 @@ html, body {
   </div>
   <input type="text" id="amount" style = "padding: 0"/>
 	</article>
-	<article class="module desktop-6 tablet-4">
+	<article class="containerp module desktop-6 tablet-4">
 	<input type = "submit" id = "change-rt" value="Change Risk Tolerance"/>
 	</article>
-	<article class="module desktop-6 tablet-4">
+	<article class="containerp module desktop-6 tablet-4">
 		<form method = "post">
 			{{ form.hidden_tag() }}
 			{{ form.invest(id = "invest")}}
